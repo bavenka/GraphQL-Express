@@ -1,0 +1,16 @@
+{
+  "customers": [
+    {
+      "id": "1",
+      "name": "pavel",
+      "email": "pavel@mail.ru",
+      "age": 22
+    },
+    {
+      "id": "2",
+      "name": "nascia",
+      "email": "bavenka@mail.ru",
+      "age": 19
+    }
+  ]
+}
