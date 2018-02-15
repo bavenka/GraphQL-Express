@@ -4,19 +4,27 @@
       "id": "1",
       "name": "pavel",
       "email": "pavel@mail.ru",
-      "age": 22
+      "age": 22,
+      "companyId": "1"
     },
     {
-      "id": "2",
+      "id": "QbB76A8",
       "name": "nascia",
-      "email": "bavenka@mail.ru",
-      "age": 19
+      "email": "nascia@mai.ru",
+      "age": 21,
+      "companyId": "2"
+    }
+  ],
+  "companies": [
+    {
+      "id": "1",
+      "name": "Apple",
+      "description": "Iphone"
     },
     {
-      "name": "alex",
-      "email": "alex@mail.ru",
-      "age": 19,
-      "id": "KEpEw8_"
+      "id":"2",
+      "name": "Samsung",
+      "description": "Android"
     }
   ]
 }
