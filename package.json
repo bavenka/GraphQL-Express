@@ -10,14 +10,17 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "express-graphql": "^0.6.11",
     "graphql": "^0.13.0",
-    "nodemon": "^1.14.12"
+    "mongodb": "^3.0.2",
+    "mongoose": "^5.0.6"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "json-server": "^0.12.1"
+    "json-server": "^0.12.1",
+    "nodemon": "^1.15.0"
   }
 }
