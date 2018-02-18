@@ -2,10 +2,9 @@
   "name": "graphql-express",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
   "scripts": {
-    "dev:server": "nodemon server.js  --exec babel-node --presets env",
-    "json:server": "json-server --watch data.json"
+    "dev:server": "nodemon ./src/server.js  --exec babel-node --presets env",
+    "json:server": "json-server --watch ./src/db.json"
   },
   "author": "",
   "license": "ISC",
