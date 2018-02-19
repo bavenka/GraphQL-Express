@@ -18,7 +18,7 @@ app.use('/graphql', graphqlHTTP({
 mongoose.connect(MONGO_URI);
 mongoose.Promise = global.Promise;
 mongoose.connection
-  .on('error', console.error.bind(console, 'MongoDB connection error:'))
+  .on('error', (error) => console.log('MongoDB connection error: ', error))
   .once('open', () => {
     console.log(`Connected to MongoDB.`);
     app.listen(4000, ()=> console.log("Express Server is Running."));
