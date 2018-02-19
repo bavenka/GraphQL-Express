@@ -9,6 +9,7 @@ import config from '../config';
 const { MONGO_URI } = config;
 const app = express();
 
+app.use(bodyParser.json());
 app.use('/graphql', graphqlHTTP({
   schema,
   graphiql: true
