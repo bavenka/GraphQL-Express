@@ -7,6 +7,8 @@ import {
 
 import userType from '../types/UserType';
 
+import User from '../../models/User';
+
 export const addUser = {
     type: userType,
     args: {
@@ -21,8 +23,8 @@ export const addUser = {
         },
     },
     resolve(parentValue, args) {
-        return axios.post(`http://localhost:3000/users`, args)
-            .then(res => res.data);
+        const user = new User(args);
+        return user.save();
     }
 };
 
@@ -43,8 +45,8 @@ export const editUser = {
         },
     },
     resolve(parentValue, args) {
-        return axios.patch(`http://localhost:3000/users/${args.id}`, args)
-            .then(res => res.data);
+        return User.findByIdAndUpdate(args.id, args, {new: true})
+            .then(user => user)
     }
 };
 
@@ -55,6 +57,6 @@ export const deleteUser = {
     },
     resolve(parentValue, { id }) {
         return axios.delete(`http://localhost:3000/users/${id}`)
-            .then(res => res.data);
+            .then(res => res);
     }
 };

@@ -7,6 +7,9 @@ import {
     editUser,
     deleteUser,
 } from './user-mutations';
+import  {
+    addCompany,
+} from './company-mutations';
 
 const rootMutation = new GraphQLObjectType({
     name: 'Mutation',
@@ -14,6 +17,7 @@ const rootMutation = new GraphQLObjectType({
         addUser,
         editUser,
         deleteUser,
+        addCompany,
     }
 });
 
