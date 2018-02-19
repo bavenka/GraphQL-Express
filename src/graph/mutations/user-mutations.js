@@ -5,10 +5,10 @@ import {
     GraphQLNonNull,
 } from 'graphql';
 
-import customerType from '../types/CustomerType';
+import userType from '../types/UserType';
 
-export const addCustomer = {
-    type: customerType,
+export const addUser = {
+    type: userType,
     args: {
         name: {
             type: new GraphQLNonNull(GraphQLString)
@@ -21,13 +21,13 @@ export const addCustomer = {
         },
     },
     resolve(parentValue, args) {
-        return axios.post(`http://localhost:3000/customers`, args)
+        return axios.post(`http://localhost:3000/users`, args)
             .then(res => res.data);
     }
-}
+};
 
-export const editCustomer = {
-    type: customerType,
+export const editUser = {
+    type: userType,
     args: {
         id: {
             type: new GraphQLNonNull(GraphQLString)
@@ -43,18 +43,18 @@ export const editCustomer = {
         },
     },
     resolve(parentValue, args) {
-        return axios.patch(`http://localhost:3000/customers/${args.id}`, args)
+        return axios.patch(`http://localhost:3000/users/${args.id}`, args)
             .then(res => res.data);
     }
-}
+};
 
-export const deleteCustomer = {
-    type: customerType,
+export const deleteUser = {
+    type: userType,
     args: {
         id: { type: new GraphQLNonNull(GraphQLString) },
     },
     resolve(parentValue, { id }) {
-        return axios.delete(`http://localhost:3000/customers/${id}`)
+        return axios.delete(`http://localhost:3000/users/${id}`)
             .then(res => res.data);
     }
-}
+};

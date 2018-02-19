@@ -19,4 +19,4 @@ export const company = {
         return axios.get(`http://localhost:3000/companies/${id}`)
             .then(res => res.data);
     }
-}
+};

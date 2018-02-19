@@ -5,10 +5,10 @@ import {
     GraphQLList,
 } from 'graphql';
 
-import customerType from '../types/CustomerType';
+import userType from '../types/UserType';
 
-export const customer = {
-    type: customerType,
+export const user = {
+    type: userType,
     args: {
         id: {
             type: new GraphQLNonNull(GraphQLString)
@@ -17,15 +17,15 @@ export const customer = {
     resolve(parentValue, {
         id
     }) {
-        return axios.get(`http://localhost:3000/customers/${id}`)
+        return axios.get(`http://localhost:3000/users/${id}`)
             .then(res => res.data);
     }
-}
+};
 
-export const customers = {
-    type: new GraphQLList(customerType),
+export const users = {
+    type: new GraphQLList(userType),
     resolve(parentValue) {
-        return axios.get(`http://localhost:3000/customers`)
+        return axios.get(`http://localhost:3000/users`)
             .then(res => res.data);
     }
 };

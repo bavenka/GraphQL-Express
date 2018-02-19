@@ -7,17 +7,17 @@ import {
 } from './company-queries';
 
 import {
-    customer,
-    customers,
-} from './customer-queries';
+    user,
+    users,
+} from './user-queries';
 
 
 const rootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
-        customer,
+        user,
         company,
-        customers,
+        users,
     },
 });
 

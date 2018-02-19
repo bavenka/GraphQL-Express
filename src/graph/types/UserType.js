@@ -8,8 +8,8 @@ import {
 import companyType from './CompanyType';
 
 
-const customerType = new GraphQLObjectType({
-    name: 'Customer',
+const userType = new GraphQLObjectType({
+    name: 'User',
     fields: () => ({
         id: {
             type: GraphQLString
@@ -33,4 +33,4 @@ const customerType = new GraphQLObjectType({
     }),
 });
 
-export default customerType;
+export default userType;

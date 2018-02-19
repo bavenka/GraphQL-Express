@@ -5,10 +5,10 @@ import {
     GraphQLList,
 } from 'graphql';
 
-import customerType from './CustomerType';
+import userType from './UserType';
 
 
-const commpanyType = new GraphQLObjectType({
+const companyType = new GraphQLObjectType({
     name: 'Company',
     fields: () => ({
         id: {
@@ -20,14 +20,14 @@ const commpanyType = new GraphQLObjectType({
         description: {
             type: GraphQLString
         },
-        customers: {
-            type: new GraphQLList(customerType),
+        users: {
+            type: new GraphQLList(userType),
             resolve(parentValue, args) {
-                return axios.get(`http://localhost:3000/companies/${parentValue.id}/customers`)
+                return axios.get(`http://localhost:3000/companies/${parentValue.id}/users`)
                     .then(res => res.data);
             }
         }
     }),
 });
 
-export default commpanyType;
+export default companyType;
